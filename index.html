@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Pangolin&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="d-flex" role="search" id="search-form">
+        <input
+          class="form-control me-2 rounded-pill search-field"
+          type="search"
+          placeholder="Enter your city..."
+          aria-label="Search"
+          id="search-field"
+        />
+        <button
+          class="btn btn-outline-secondary rounded-pill search-button"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+      <div class="row weather-data">
+        <div class="col-12 current-weather-data">
+          Current weather
+          <button class="current-position" id="position-button">
+            <img
+              src="icons/currentPosition.png"
+              alt="current position icon"
+              class="position-icon"
+            />
+          </button>
+        </div>
+        <div class="col-4 city-name" id="city-name">Berlin</div>
+        <div class="col-4 current-temperature">
+          <span id="current-temp-data">31</span>
+          <a href="#" class="celsius" id="temp-in-celsius">°C</a>|<a
+            href="#"
+            class="fahrenheit"
+            id="temp-in-fahrenheit"
+            >°F</a
+          >
+        </div>
+        <div class="col-4 sky-data current-weather-data">
+          <span id="sky-weather">Clear sky</span>
+        </div>
+        <div class="col-4 current-weather-data">
+          <span id="current-time"> </span>
+          <div class="col-12 current-weather-data" id="current-day"></div>
+        </div>
+        <div class="col-4">
+          <img src="icons/sun.png" alt="sun" class="weather-icon sun" />
+        </div>
+        <div class="col-4 current-weather-data">
+          Humidity: <span id="humidity">24</span>%
+          <div class="col-12 current-weather-data">
+            Wind speed: <span id="wind-speed">9.2</span>km/h
+          </div>
+        </div>
+      </div>
+      <div class="row weekly-weather">
+        <div class="col-2 weekly-weather-data">
+          Wednseday
+          <div class="col">23°|18°</div>
+          <div class="col">
+            <img
+              src="icons/cloudy.png"
+              alt="cloudy"
+              class="weekly-weather-icon"
+            />
+          </div>
+        </div>
+        <div class="col-2 weekly-weather-data">
+          Thursday
+          <div class="col">27°|23°</div>
+          <div class="col">
+            <img
+              src="icons/Thunderstorm.png"
+              alt="thunderstorm"
+              class="weekly-weather-icon"
+            />
+          </div>
+        </div>
+        <div class="col-2 weekly-weather-data">
+          Friday
+          <div class="col">30°|24°</div>
+          <div class="col">
+            <img src="icons/sun.png" alt="sun" class="weekly-weather-icon" />
+          </div>
+        </div>
+        <div class="col-2 weekly-weather-data">
+          Saturday
+          <div class="col">35°|26°</div>
+          <div class="col">
+            <img src="icons/hot.png" alt="hot" class="weekly-weather-icon" />
+          </div>
+        </div>
+        <div class="col-2 weekly-weather-data">
+          Sunday
+          <div class="col">29°|20°</div>
+          <div class="col">
+            <img
+              src="icons/cloudy.png"
+              alt="cloudy"
+              class="weekly-weather-icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
