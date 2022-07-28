@@ -35,7 +35,7 @@ function showWeatherData(response) {
     response.data.main.temp
   );
   document.querySelector("#sky-weather").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
 }

@@ -53,6 +53,7 @@
 .sky-data {
   position: relative;
   top: 28px;
+  text-transform: capitalize;
 }
 .weather-data {
   text-align: center;
