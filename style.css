@@ -80,3 +80,9 @@
 .weekly-weather-icon {
   width: 36px;
 }
+
+.footer {
+  display: block;
+  text-align: center;
+  font-size: smaller;
+}
