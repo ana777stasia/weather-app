@@ -29,6 +29,7 @@ currentDate.innerHTML = `${currentDay} ${currentMonth} ${currentYear}`;
 time.innerHTML = `${currentHours}:${currentMinutes}`;
 
 function showWeatherData(response) {
+  console.log(response);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#current-temp-data").innerHTML = Math.round(
     response.data.main.temp
@@ -39,6 +40,9 @@ function showWeatherData(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let iconElement = document.querySelector("#icon-element");
+  let iconUrl = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+  iconElement.setAttribute("src", iconUrl);
 }
 
 function changeCityName(event) {
