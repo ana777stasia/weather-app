@@ -63,7 +63,7 @@
   font-family: "Pangolin", cursive;
 }
 .weather-icon,
-.sun {
+.main {
   width: 75px;
 }
 .weekly-weather {
