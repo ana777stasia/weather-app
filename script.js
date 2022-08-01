@@ -29,7 +29,6 @@ currentDate.innerHTML = `${currentDay} ${currentMonth} ${currentYear}`;
 time.innerHTML = `${currentHours}:${currentMinutes}`;
 
 function showWeatherData(response) {
-  console.log(response);
   document.querySelector("#city-name").innerHTML = response.data.name;
   let temperatureElement = document.querySelector("#current-temp-data");
   document.querySelector("#sky-weather").innerHTML =
