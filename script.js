@@ -28,7 +28,7 @@ if (currentMinutes < 10) {
 currentDate.innerHTML = `${currentDay} ${currentMonth} ${currentYear}`;
 time.innerHTML = `${currentHours}:${currentMinutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thusday", "Wednseday", "Thursday", "Friday", "Saturday"];
   let forecastHTML = `<div class="row">`;
@@ -48,6 +48,14 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
+  console.log(response.data.daily);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "f26f7a1bde9f9ef7818f1bda2d4d548a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeatherData(response) {
@@ -64,7 +72,7 @@ function showWeatherData(response) {
   iconElement.setAttribute("src", iconUrl);
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  displayForecast();
+  getForecast(response.data.coord);
 }
 
 function changeCityName(city) {
