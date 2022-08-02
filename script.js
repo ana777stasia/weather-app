@@ -28,6 +28,28 @@ if (currentMinutes < 10) {
 currentDate.innerHTML = `${currentDay} ${currentMonth} ${currentYear}`;
 time.innerHTML = `${currentHours}:${currentMinutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thusday", "Wednseday", "Thursday", "Friday", "Saturday"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 weekly-weather-data">${day} <div class="col">23°|18°</div>
+          <div class="col">
+            <img
+              src="icons/cloudy.png"
+              alt="cloudy"
+              class="weekly-weather-icon"
+            />
+          </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeatherData(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   let temperatureElement = document.querySelector("#current-temp-data");
@@ -42,6 +64,7 @@ function showWeatherData(response) {
   iconElement.setAttribute("src", iconUrl);
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  displayForecast();
 }
 
 function changeCityName(city) {
