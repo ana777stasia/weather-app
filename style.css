@@ -42,13 +42,9 @@
   font-size: 36px;
   font-weight: bold;
 }
-.celsius,
-.fahrenheit {
+.celsius {
   text-decoration: none;
   color: #212529;
-}
-.fahrenheit {
-  font-size: 20px;
 }
 .sky-data {
   position: relative;

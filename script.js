@@ -113,33 +113,6 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchButton);
 changeCityName("Berlin");
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp-data");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemperature = Math.round(celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp-data");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#temp-in-fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#temp-in-celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 function showCurrentWeather(response) {
   let cityName = document.querySelector("#city-name");
   let currentTemp = document.querySelector("#current-temp-data");
